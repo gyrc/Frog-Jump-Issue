@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int frog(unsigned int n)
+{
+    if( n <= 0 )
+    {
+        printf("Please input data large than zero!\n");
+        return 0;
+    }
+    else if( n == 1 | n == 2)
+    {
+        return n;
+    }
+    else
+    {
+        return frog( n-1 ) + frog( n-2 );
+    }
+}
+
+int main()
+{
+    unsigned int num = 20;
+    printf("There are %d paths to the %d step.", frog(num), num);
+    return 0;
+}
